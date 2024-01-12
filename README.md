@@ -1,0 +1,2 @@
+# minitaller
+completar el taller
