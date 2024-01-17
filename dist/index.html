@@ -1,0 +1,51 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>minitaller</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <h1>EQUIPO WIFI</h1>
+    <main>
+      <h2>
+        Esta aplicacion web genera equipos apartir de integrantes que
+        introduscas
+      </h2>
+      <form>
+        <fieldset>
+          <legend>Nombre Completo</legend>
+          <label for="nombre">Nombre</label>
+          <input type="text" name="nombre" id="nombre" />
+          <label for="apellido">Apellido</label>
+          <input type="text" name="apellido" id="apellido" />
+        </fieldset>
+        <fieldset>
+          <legend>Edad</legend>
+          <label for="nacimiento">Fecha de nacimiento</label>
+          <input type="date" name="nacimiento" id="nacimiento" />
+          <label>Edad</label>
+          <input type="text" name="edad" readonly disabled />
+        </fieldset>
+        <fieldset>
+          <legend>Numero de intengrantes</legend>
+          <label for="estadoCivil"></label>
+          <select name="estadoCivil" id="estadoCivil">
+            <option value="" selected disabled>Seleccione un opción...</option>
+            <option value="soltero">1</option>
+            <option value="casado">2</option>
+            <option value="viudo">3</option>
+            <option value="divorciado">4</option>
+            <option value="separado">5</option>
+          </select>
+        </fieldset>
+      </form>
+      <button id="generarEquipo">generar equipo</button>
+    </main>
+    <aside></aside>
+    <footer></footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
