@@ -23,27 +23,22 @@ function generateTeams() {
     }
 }
 function distributeNamesToTeams(names, teamCount) {
-    // Asegurarse de que haya al menos un equipo y cada equipo tenga al menos 2 nombres
     if (teamCount < 1 || names.length < 2 * teamCount) {
         return [['Error: Debes tener al menos un equipo y asegurar al menos 2 nombres por equipo.']];
     }
     const teams = new Array(teamCount).fill([]).map(() => []);
-    // Distribuir al menos 2 nombres por equipo
     for (let i = 0; i < names.length; i++) {
         const teamIndex = i % teamCount;
         teams[teamIndex].push(names[i]);
     }
-    // Asegurarse de que cada equipo tenga al menos 2 nombres
     teams.forEach(team => {
         while (team.length < 2) {
-            // Tomar un nombre de otro equipo
             const otherTeamIndex = (teamCount + teams.indexOf(team) + 1) % teamCount;
             const transferName = teams[otherTeamIndex].pop();
             if (transferName) {
                 team.push(transferName);
             }
             else {
-                // Si no hay más nombres disponibles, salir del bucle
                 break;
             }
         }
